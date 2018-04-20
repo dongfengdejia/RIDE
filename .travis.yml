@@ -26,4 +26,4 @@ install:
   # - "sh -e /etc/init.d/xvfb start"
 script:
   # - invoke test
-  - invoke list
+  - invoke --list
