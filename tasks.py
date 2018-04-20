@@ -216,6 +216,18 @@ def release_notes(ctx):
         _log(' | '.join(parts))
 
 
+@task
+def check_env(ctx):
+    """Check wxPython version."""
+    try:
+        import wx
+        print "wxPython version:", wx.__version__
+    except ImportError:
+        print "import wx failure, there not have wxPython module"
+        
+    # ctx.run("pip show wxPython")
+    
+    
 # Helper functions
 
 def _clean(keep_dist=False):
