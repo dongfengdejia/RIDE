@@ -264,6 +264,7 @@ class ToolBar(object):
         button = ToolBarButton(self._frame, self, action)
         name = self._format_button_tooltip(action)
         self._wx_toolbar.AddLabelTool(button.id, label=name, bitmap=action.icon,
+        # self._wx_toolbar.AddTool(button.id, label=name, bitmap=action.icon,
                                       shortHelp=name, longHelp=action.doc)
         self._wx_toolbar.Realize()
         self._buttons.append(button)

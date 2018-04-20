@@ -51,8 +51,10 @@ if IS_WINDOWS:
     _TREE_ARGS['style'] |= wx.TR_EDIT_LABELS
 
 
+from robotide.utils.noconflict import classmaker
 class Tree(treemixin.DragAndDrop, customtreectrl.CustomTreeCtrl,
            utils.RideEventHandler):
+    __metaclass__ = classmaker()
 
     _RESOURCES_NODE_LABEL = 'External Resources'
 

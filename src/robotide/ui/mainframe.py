@@ -62,7 +62,9 @@ _menudata = """
 """
 
 
+from robotide.utils.noconflict import classmaker
 class RideFrame(wx.Frame, RideEventHandler):
+    __metaclass__ = classmaker()
 
     def __init__(self, application, controller):
         wx.Frame.__init__(self, parent=None, title='RIDE',
