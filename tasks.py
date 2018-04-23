@@ -226,6 +226,7 @@ def check_env(ctx):
         print "import wx failure, there not have wxPython module"
         
     # ctx.run("pip show wxPython")
+    ctx.run("pip list")
     
     
 # Helper functions
