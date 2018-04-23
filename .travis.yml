@@ -1,7 +1,8 @@
 language: python
 dist: trusty
 # group: edge
-# before_install:
+before_install:
+    sudo apt-get install python-wxgtk2.8
   # try to fix dbus error
   # - sudo touch /etc/machine-id
   # - dbus-uuidgen > .myId
