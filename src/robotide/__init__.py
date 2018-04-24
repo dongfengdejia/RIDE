@@ -104,8 +104,6 @@ def _run(inpath=None, updatecheck=True, debug_console=False):
     ride = RIDE(inpath, updatecheck)
     if debug_console:
         debugconsole.start(ride)
-
-    print "+++My test"
     ride.MainLoop()
 
 
