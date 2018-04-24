@@ -222,7 +222,8 @@ def release_notes(ctx):
 def check_env(ctx):
     """Check wxPython version."""
 
-    sys.path.append("/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode")
+    # sys.path.append("/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode")
+    
     try:
         import wx
         print "wxPython version:", wx.__version__
