@@ -40,6 +40,8 @@ def devel(ctx, args=''):
 def test(ctx, test_filter=''):
     """Run unit tests."""
     _remove_bytecode_files()
+    
+    check_env(ctx)
     from nose import run as noserun
     _set_development_path()
     additional_args = []
@@ -221,7 +223,6 @@ def check_env(ctx):
     """Check wxPython version."""
 
     sys.path.append("/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode")
-
     try:
         import wx
         print "wxPython version:", wx.__version__
