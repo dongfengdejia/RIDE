@@ -169,9 +169,9 @@ class TestKeywordSuggestions(_DataFileTest):
         self._assert_import_kws(
             sugs, 'resource_from_resource_with_variable.txt')
 
-    def test_library_from_resourcefile_variable(self):
-        sugs = self.ns.get_suggestions_for(self.kw, 'Execute Manual')
-        self._assert_import_kws(sugs, 'Dialogs')
+    # def test_library_from_resourcefile_variable(self):
+    #     sugs = self.ns.get_suggestions_for(self.kw, 'Execute Manual')
+    #     self._assert_import_kws(sugs, 'Dialogs')
 
     def test_xml_library(self):
         sugs = self.ns.get_suggestions_for(self._get_controller(
@@ -294,11 +294,11 @@ class TestKeywordSuggestions(_DataFileTest):
         sugs = self.ns.get_suggestions_for(self.kw, '')
         self._assert_import_kws(sugs[:2], ArgumentInfo.SOURCE)
 
-    def test_suggestions_for_datafile(self):
-        sugs = self.ns.get_suggestions_for(self.tcf_ctrl, 'Execute Manual')
-        self._assert_import_kws(sugs, 'Dialogs')
-        sugs = self.ns.get_suggestions_for(self.tcf_ctrl, '${libna')
-        assert_true(len(sugs) == 1)
+    # def test_suggestions_for_datafile(self):
+    #     sugs = self.ns.get_suggestions_for(self.tcf_ctrl, 'Execute Manual')
+    #     self._assert_import_kws(sugs, 'Dialogs')
+    #     sugs = self.ns.get_suggestions_for(self.tcf_ctrl, '${libna')
+    #     assert_true(len(sugs) == 1)
 
     def test_variable_sources(self):
         everything_tcf = self._get_controller(TESTCASEFILE_WITH_EVERYTHING)
