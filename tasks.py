@@ -225,7 +225,7 @@ def check_env(ctx):
     
     pprint.pprint(sys.path)
 
-    sys.path.append("/usr/lib/python2.7/dist-packages/")
+    sys.path.append("/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode")
     pprint.pprint(sys.path)
     
     
