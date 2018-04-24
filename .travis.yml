@@ -2,18 +2,7 @@ language: python
 dist: trusty
 # group: edge
 before_install:
-    - which python
     - sudo apt-get install python-wxgtk2.8
-    - cd /home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages
-    # ln -s /usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode/ .
-    - ln -s /usr/lib/python2.7/dist-packages/wx.pth .
-    - ln -s /usr/lib/python2.7/dist-packages/wxversion.py .
-    - ln -s /usr/lib/python2.7/dist-packages/wxversion.pyc .
-    - cd -
-    
-    - ls -al /usr/lib/python2.7/dist-packages/
-    - ls -al /home/travis/virtualenv/python2.7.14/lib/python2.7/site-packages
-    
   # try to fix dbus error
   # - sudo touch /etc/machine-id
   # - dbus-uuidgen > .myId
@@ -40,3 +29,4 @@ script:
   # - invoke test
   # - invoke --list
   - invoke check-env
+  - invoke test

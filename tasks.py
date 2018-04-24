@@ -219,16 +219,9 @@ def release_notes(ctx):
 @task
 def check_env(ctx):
     """Check wxPython version."""
-    
-    import sys
-    import pprint
-    
-    pprint.pprint(sys.path)
 
     sys.path.append("/usr/lib/python2.7/dist-packages/wx-2.8-gtk2-unicode")
-    pprint.pprint(sys.path)
-    
-    
+
     try:
         import wx
         print "wxPython version:", wx.__version__
@@ -236,12 +229,9 @@ def check_env(ctx):
         print "import wx failure, there not have wxPython module"
         
     # ctx.run("pip show wxPython")
-    
-    
-    
-    ctx.run("pip list")
-    
-    
+    # ctx.run("pip list")
+
+
 # Helper functions
 
 def _clean(keep_dist=False):
