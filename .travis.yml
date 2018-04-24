@@ -1,7 +1,7 @@
 language: python
 # os: Windows
 dist: trusty
-# group: edge
+group: edge
 virtualenv:
   system_site_packages: true
   
