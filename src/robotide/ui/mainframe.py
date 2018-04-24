@@ -52,6 +52,7 @@ _menudata = """
 !Manage Plugins | | | | POSITION-81
 !View All Tags | | F7 | | POSITION-82
 !Preferences | | | | POSITION-99
+!Enable Curtain | enable the Curtain feature | | | POSITION-100
 
 [Help]
 !Shortcut keys | RIDE shortcut keys
@@ -127,6 +128,11 @@ class RideFrame(wx.Frame, RideEventHandler):
         self.tree = Tree(splitter, self.actions, self._application.settings)
         self.actions.register_actions(
             ActionInfoCollection(_menudata, self, self.tree))
+
+        print "+++ exit at here"
+        import sys
+        sys.exit(0)
+        
         mb.take_menu_bar_into_use()
         splitter.SetMinimumPaneSize(100)
         splitter.SplitVertically(self.tree, self.notebook, 300)
