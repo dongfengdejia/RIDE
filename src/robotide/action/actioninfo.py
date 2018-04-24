@@ -103,10 +103,6 @@ def ActionInfoCollection(data, event_handler, container=None):
         Content Assist (Ctrl-Space or Ctrl-Alt-Space) | Has two shortcuts.
     """
 
-    print "+++data",data
-    print "+++event_handler",event_handler
-    print "+++container",container
-
     menu = None
     actions = []
     for row in data.splitlines():
@@ -131,21 +127,15 @@ def _create_action_info(eventhandler, menu, container, row):
         name = name[1:]
         container = None
     eventhandler_name, name = _get_eventhandler_name_and_parsed_name(name)
-    print "+++ exit at ", __name__
-    import sys
-    sys.exit()
-
     action = getattr(eventhandler, eventhandler_name)
     return ActionInfo(menu, name, action, container, shortcut, icon, doc, position)
 
 def _get_eventhandler_name_and_parsed_name(name):
-    print "+++name1", name
     eventhandler_name, name = _parse_shortcuts_from_name(name)
     return ('On%s' % eventhandler_name.replace(' ', '').replace('&', '') ,
             name)
 
 def _parse_shortcuts_from_name(name):
-    print "+++name2", name
     if '(' in name:
         eventhandler_name, shortcuts = name.split('(', 1)
         shortcuts = shortcuts.split(')')[0]
